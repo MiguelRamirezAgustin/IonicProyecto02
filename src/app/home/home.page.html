@@ -1,14 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding no-bouce fullscreen="true" text-center class="cotenidos">
+  <br>
+  <br>
+  <ion-row justify-content-center>
+    <ion-img src="assets/img/Usuarios.png" class="imgbienvenido"></ion-img>
+  </ion-row>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center>
+        <div text-center>
+          <br>
+          <h1>LOGIN</h1>
+          <br>
+        </div>
+        <div padding class="divlogin">
+          <ion-item>
+            <span item-right>
+              <ion-icon name="person"></ion-icon>
+            </span>
+            <ion-input placeholder="Nombre" type="text" class="inputlogin"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <span item-right>
+              <ion-icon name="unlock"></ion-icon>
+            </span>
+            <ion-input type="password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+
+        </div>
+        <div class="divbtnLonig">
+          <button class="btnLogin" (click)="login()" expand="block">LOGIN</button>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

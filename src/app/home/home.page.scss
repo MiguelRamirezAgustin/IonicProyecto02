@@ -1,1 +1,65 @@
 
+.divlogin{ 
+      margin: auto;
+      height: 50%;
+      width: 85%;
+      bottom: 500px;
+ }
+ 
+ .imgbienvenido{
+    width: 35%;
+    height: 35%;
+ }
+ 
+ .divbtnLonig{
+    margin-top: 10%;
+     
+ }
+ 
+ .btnLogin{
+       color: rgb(240, 240, 240);
+       height: 40px;
+       width: 150px;
+       margin: auto;
+       top: 100%;
+       background:rgb(0, 162, 255);
+       border-width: 2px;
+       border-radius: 5%;
+      
+ }
+ 
+ ion-input{
+    text-align: center;
+    width: 70%;
+    top:20%
+ }
+ 
+ .inputlogin{
+       text-align: center;
+       .text-input::-webkit-input-placeholder {
+       text-align: center;
+       }
+ }
+ .cotenidos{
+       background: rgb(0, 124, 177);
+ }
+ 
+ .rowlogin{
+       top: 300px;
+ }
+ 
+ .text-input::-webkit-input-placeholder {
+       text-align: center;
+     }
+     
+ .text-input:-moz-placeholder {
+       text-align: center;
+     }
+     
+ .text-input::-moz-placeholder {
+       text-align: center;
+ }
+     
+ .text-input:-ms-input-placeholder {
+       text-align: center;
+ }

@@ -1,5 +1,7 @@
 {
   "name": "SubMenuIonic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
