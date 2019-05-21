@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-camara',
@@ -8,13 +9,22 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class CamaraPage implements OnInit {
 
-  constructor(private camera:Camera) { }
+  constructor(private camera:Camera, public loaderCont:LoadingController) { }
   currentImage: string;
   image:string= null;
   
   ngOnInit() {
+    
   }
 
+  async Load(){
+    let cargar=  await this.loaderCont.create({
+      duration:200,
+      message:'Cargando',
+      showBackdrop:true
+    })
+    cargar.present();
+  }
 
   openCam(){
     const options: CameraOptions = {
@@ -27,7 +37,9 @@ export class CamaraPage implements OnInit {
     }
     this.camera.getPicture(options).then((imageData) => {
       //this.image =  imageData;
+      this.Load();
      this.image=(<any>window).Ionic.WebView.convertFileSrc(imageData);
+     
     }, (err) => {
      alert("error "+JSON.stringify(err))
     });
