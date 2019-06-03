@@ -3,10 +3,34 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>usuarios</ion-title>
+    <ion-title>Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+   <ion-text text-center>
+     Lista de Usuarios de AWS 
+   </ion-text>
+   
+   <br>
+   <br>
+
+   <ion-content>
+    <ion-list >
+    <ion-item-sliding *ngFor="let DatosUsuarios of datos">
+      <ion-item>
+        <div class="divGroup">
+            <ion-label class="LabelNombre">* Nombre: {{DatosUsuarios.nombre}}</ion-label> 
+            <p class="LabelApellidos">* Apellidos: {{DatosUsuarios.apellidos}}</p>
+            <p class="parrafo"> - Direccion: {{DatosUsuarios.direccion}}</p>
+        </div>
+        <!-- <ion-icon ></ion-icon> -->
+      </ion-item>
+      <!-- <ion-item-options side="end">
+      </ion-item-options> -->
+    </ion-item-sliding>   
+  </ion-list>
+</ion-content>
+
 
 </ion-content>
