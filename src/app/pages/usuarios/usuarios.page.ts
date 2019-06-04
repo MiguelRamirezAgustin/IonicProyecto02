@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../../services/auth-service.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,20 +9,29 @@ import { AuthServiceService } from '../../services/auth-service.service';
 })
 export class UsuariosPage implements OnInit {
 
-  constructor(public ApiService:AuthServiceService) { }
-  datos:any;
+  constructor(public ApiService: AuthServiceService,
+  ) { }
+
+
+
+
+  datos: any;
   ngOnInit() {
     console.log('pantalla de usuarios--->>>>>');
+    //Loader viene de services...!!
+    this.ApiService.PresenLoader();
     this.CargarUsuarios();
   }
 
-  CargarUsuarios(){
-  this.ApiService.servicioUsuarios().then(data =>{
-    this.datos = data;
-    console.log('Estos son los datos de Usuarios ', JSON.stringify( this.datos));
-  },error =>{
-    console.log(error);
-  });
- }
+
+  //Metodo get 
+  CargarUsuarios() {
+    this.ApiService.servicioUsuariosGet().then(data => {
+      this.datos = data;
+      console.log('Estos son los datos de Usuarios ', JSON.stringify(this.datos));
+    }, error => {
+      console.log(error);
+    });
+  }
 
 }

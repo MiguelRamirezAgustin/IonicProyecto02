@@ -13,6 +13,11 @@ export class MenuPage implements OnInit {
       url: '/menu/usuarios',
       icon: 'person'
     },
+    {
+      title: 'Usuario Crear',
+      url: '/menu/usuariosCrear',
+      icon: 'person'
+    },
      {
        title: 'Camara',
        url: '/menu/camara',

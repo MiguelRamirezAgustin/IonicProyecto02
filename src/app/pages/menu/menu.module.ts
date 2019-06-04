@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: '../usuarios/usuarios.module#UsuariosPageModule'
       },
       {
+        path: 'usuariosCrear',
+        loadChildren: '../crear-usuario/crear-usuario.module#CrearUsuarioPageModule'
+      },
+      {
         path: 'camara',
         loadChildren: '../camara/camara.module#CamaraPageModule'
       },
