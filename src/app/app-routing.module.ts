@@ -6,6 +6,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
  // { path: 'graficas', loadChildren: './pages/graficas/graficas.module#GraficasPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+ // { path: 'juego', loadChildren: './pages/juego/juego.module#JuegoPageModule' },
+  //{ path: 'galeria', loadChildren: './pages/galeria/galeria.module#GaleriaPageModule' },
  // { path: 'crear-usuario', loadChildren: './pages/crear-usuario/crear-usuario.module#CrearUsuarioPageModule' },
   // { path: 'otros', loadChildren: './pages/otros/otros.module#OtrosPageModule' },
   // { path: 'camara', loadChildren: './pages/camara/camara.module#CamaraPageModule' },

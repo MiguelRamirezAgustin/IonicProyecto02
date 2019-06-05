@@ -30,16 +30,25 @@ const routes: Routes = [
         loadChildren: '../camara/camara.module#CamaraPageModule'
       },
       {
+        path: 'galeria',
+        loadChildren: '../galeria/galeria.module#GaleriaPageModule'
+      },
+      {
         path: 'graficas',
         loadChildren: '../graficas/graficas.module#GraficasPageModule'
       },
       {
         path: 'otros',
         loadChildren: '../otros/otros.module#OtrosPageModule'
+      },
+      {
+        path: 'juego',
+        loadChildren: '../juego/juego.module#JuegoPageModule'
       }
     ]
   }
 ];
+
 
 @NgModule({
   imports: [

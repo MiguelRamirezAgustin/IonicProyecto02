@@ -16,12 +16,17 @@ export class MenuPage implements OnInit {
     {
       title: 'Usuario Crear',
       url: '/menu/usuariosCrear',
-      icon: 'person'
+      icon: 'person-add'
     },
      {
        title: 'Camara',
        url: '/menu/camara',
        icon: 'reverse-camera'
+     },
+     {
+       title:'Galeria',
+       url:'/menu/galeria',
+       icon: 'images'
      },
     {
       title: 'Mas Opciones',
@@ -35,6 +40,11 @@ export class MenuPage implements OnInit {
           title: 'Otros',
           url: '/menu/otros',
           icon: 'alert'
+        },
+        {
+          title: 'juego',
+          url: '/menu/juego',
+          icon: 'game-controller-b'
         },
       ]
     }
