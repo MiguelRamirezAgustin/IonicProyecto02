@@ -35,7 +35,7 @@ servicioUsuariosGet(){
         console.log(data);
         console.log('^^^^^^^^^^^^^^^^^^^\n');
       }, (error) => {
-        console.log('–––––––––––ERROR–––––––––––\n');
+        console.log('–––––––––––ERROR––GET–––––––––\n');
         console.log(error);
         console.log('–––––––––––––––––––––––––\n');
       });
@@ -54,12 +54,29 @@ servicioUsuariosPost(datosUsuarios){
       console.log(data);
       console.log('^^^^^^^^^^^^^^^^^^^\n');
      }, error=>{
-      console.log('–––––––––––ERROR–––––––––––\n');
+      console.log('–––––––––––ERROR––POST–––––––––\n');
       console.log(error);
       console.log('–––––––––––––––––––––––––\n');
     });
   });
 }
+
+//Metodo Delete user
+servicioUsuariosDelete(id){
+   return new Promise(resolve=>{
+     this.http.delete(' https://mbsi69vq93.execute-api.us-east-2.amazonaws.com/test', id).subscribe(data=>{
+     resolve(data);
+     console.log('^^^^^^^^OK_Delete^^^^^^^^^^>\n');
+     console.log(data);
+     console.log('^^^^^^^^^^^^^^^^^^^\n');
+    }, error=>{
+     console.log('–––––––––––ERROR––DELETE–––––––––\n');
+     console.log(JSON.stringify( error));
+     console.log('–––––––––––––––––––––––––\n');
+     });
+   });
+}
+
 
 
   

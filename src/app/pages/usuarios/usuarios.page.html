@@ -17,12 +17,13 @@
 
    <ion-content>
     <ion-list >
-    <ion-item-sliding *ngFor="let DatosUsuarios of datos">
-      <ion-item>
-        <div class="divGroup">
+    <ion-item-sliding *ngFor="let DatosUsuarios of datos;  let i of index">
+      <ion-item >
+        <div class="divGroup" >
             <ion-label class="LabelNombre">* Nombre: {{DatosUsuarios.nombre}}</ion-label> 
             <p class="LabelApellidos">* Apellidos: {{DatosUsuarios.apellidos}}</p>
             <p class="parrafo"> - Direccion: {{DatosUsuarios.direccion}}</p>
+            <ion-icon name="trash" (click)="Detalles(DatosUsuarios)" start="end"></ion-icon>
         </div>
         <!-- <ion-icon ></ion-icon> -->
       </ion-item>
