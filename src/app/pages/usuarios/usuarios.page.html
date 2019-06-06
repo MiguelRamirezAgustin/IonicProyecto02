@@ -11,7 +11,7 @@
    <ion-text text-center>
      Lista de Usuarios de AWS 
    </ion-text>
-   
+   <ion-button (click)="eliminar()">Eliminar</ion-button>
    <br>
    <br>
 
@@ -22,7 +22,9 @@
         <div class="divGroup" >
             <ion-label class="LabelNombre">* Nombre: {{DatosUsuarios.nombre}}</ion-label> 
             <p class="LabelApellidos">* Apellidos: {{DatosUsuarios.apellidos}}</p>
+            <p class="LabelApellidos">* Apellidos: {{DatosUsuarios.edad}}</p>
             <p class="parrafo"> - Direccion: {{DatosUsuarios.direccion}}</p>
+            <p class="parrafo"> - Direccion: {{DatosUsuarios.correo}}</p>
             <ion-icon name="trash" (click)="Detalles(DatosUsuarios)" start="end"></ion-icon>
         </div>
         <!-- <ion-icon ></ion-icon> -->

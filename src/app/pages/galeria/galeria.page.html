@@ -7,8 +7,22 @@
   </ion-toolbar>
 </ion-header>
 
-  <ion-content padding>
+<ion-content padding>
+  <ion-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let g of result2">
+        <ion-item> 
+            <div class="divGroup" >
+                <ion-thumbnail>
+                    <img [src]="g.Key">
+                  </ion-thumbnail>
+                <br>
+                <ion-label>{{g.LastModified}}</ion-label>
+                <ion-label>{{g.Size}}</ion-label>
+            </div>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
 
-
-  
 </ion-content>

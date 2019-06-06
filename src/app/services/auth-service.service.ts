@@ -3,8 +3,9 @@ import { HttpClientModule } from '@angular/common/http';
 //import { HttpClient } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http/ngx';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoadingController } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,10 +27,18 @@ async PresenLoader(){
   await Load.present();
 }
 
+
+httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
+
 //Metodo get 
 servicioUsuariosGet(){
     return new Promise( resolve => {
-      this.http.get('https://mbsi69vq93.execute-api.us-east-2.amazonaws.com/test').subscribe(data => {
+      this.http.get('https://0kocuz1qef.execute-api.us-east-2.amazonaws.com/test').subscribe(data => {
         console.log('^^^^^^^^OK_GET^^^^^^^^^^>\n');
         resolve(data);
         console.log(data);
@@ -61,22 +70,55 @@ servicioUsuariosPost(datosUsuarios){
   });
 }
 
-//Metodo Delete user
-servicioUsuariosDelete(id){
-   return new Promise(resolve=>{
-     this.http.delete(' https://mbsi69vq93.execute-api.us-east-2.amazonaws.com/test', id).subscribe(data=>{
-     resolve(data);
-     console.log('^^^^^^^^OK_Delete^^^^^^^^^^>\n');
-     console.log(data);
-     console.log('^^^^^^^^^^^^^^^^^^^\n');
-    }, error=>{
-     console.log('–––––––––––ERROR––DELETE–––––––––\n');
-     console.log(JSON.stringify( error));
-     console.log('–––––––––––––––––––––––––\n');
-     });
-   });
-}
 
+//Metodo Delete user
+ servicioUsuariosDelete(id){
+  return new Promise(resolve => {
+    this.http.post('https://0kocuz1qef.execute-api.us-east-2.amazonaws.com/test/delete' , id , this.httpOptions ).subscribe(res=>{
+    resolve(res);
+    console.log('^^^^^^^^OK_Delete^^^^^^^^^^>\n', res);
+   }, error=>{
+    console.log('–––––––––––ERROR––DELETE–––––––––\n', JSON.stringify( error));
+        }
+      );
+  });
+ }
+  
+
+
+
+// deleteUser(id) {
+//   console.log('se ejecuta delete del service' + JSON.stringify(id));
+//   return new Promise((resolve, reject) => {
+//     this.http
+//       .delete(
+//         "https://w6rklqs7qe.execute-api.us-east-1.amazonaws.com/dev/employee/" + id
+//       )
+//       .subscribe(
+//         res => {
+//           resolve(res);
+//           console.log('res' + JSON.stringify(res));
+//         },
+//         error => {
+//           reject(error);
+//         }
+//       );
+//   });
+
+
+ //Get S3 Ejemplo 
+  servicio_s3_Get(){
+    return new Promise(resolve=>{
+      this.http.get('https://0nkpk9odw3.execute-api.us-east-2.amazonaws.com/test').subscribe(data=>{
+        resolve(data);
+        console.log('^^^^^^^^OK_s3_Get^^^^^^^^^^>\n');
+        console.log(data);
+      },error=>{
+        console.log('–––––––––––ERROR––3_Get–––––––––\n');
+        console.log(JSON.stringify( error));
+      });
+    });
+  }
 
 
   

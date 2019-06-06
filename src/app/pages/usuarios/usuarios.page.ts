@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { LoadingController, AlertController } from '@ionic/angular';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.page.html',
@@ -9,10 +11,18 @@ import { LoadingController, AlertController } from '@ionic/angular';
 })
 export class UsuariosPage implements OnInit {
 
-
+  ide:any;
+  dato:any;
   datos: any;
+  
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  } 
 
   constructor(public ApiService: AuthServiceService,
+              private http: HttpClient,
               public alertController: AlertController
              ) { }
 
@@ -59,7 +69,7 @@ export class UsuariosPage implements OnInit {
         text: 'OK',
         handler: () => {
           console.log('ok ', id)
-          this.eliminar(id);
+          //this.eliminar(id);
           return resolve(true);
         },
       },
@@ -69,11 +79,46 @@ export class UsuariosPage implements OnInit {
   });
  }
 
- eliminar(id){
-  this.ApiService.servicioUsuariosDelete(id)
+
+
+//  registrar() {
+//   console.log('Agregar--dos ----\n ', this.ArrayUsuario);
+//   if (this.ArrayUsuario.nombre === ' ' || this.ArrayUsuario.direccion === ' ' || this.ArrayUsuario.direccion === ' ') {
+//     alert('No se puede Agregar\n USUARIO ');
+//   } else {
+//     this.ApiService.PresenLoader();
+//     this.ApiService.servicioUsuariosPost(this.ArrayUsuario);
+//   }
+// }
+
+
+
+ eliminar(){
+  this.ide={
+    "id":"cd90d670-88aa-11e9-9e85-bb145c5a56e3"
+  }
+
+  console.log('datosiDE -- ', this.ide);
+   this.dato=JSON.stringify(this.ide.id);
+   console.log('datos01 id.id -- ', this.dato);
+
+   this.ApiService.servicioUsuariosDelete( JSON.stringify(this.ide));
 }
  
 
+
+
+// deleteUser(id) {
+//    id = this.name;
+//    console.log("press delete " + JSON.stringify(id));
+//    this.service.deleteUser(id).then(res => {
+//      console.log(res);
+//      this.ngOnInit();
+//    }, (error)=>{
+//      console.log(error);
+//    });
+//    //return id;
+//  }
  
 
 
