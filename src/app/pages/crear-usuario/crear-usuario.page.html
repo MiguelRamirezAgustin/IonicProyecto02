@@ -1,57 +1,75 @@
 <ion-header>
-    <ion-toolbar color="favorite">
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons >
-        <!-- <ion-title >Crear Usuarios</ion-title> -->
-      </ion-toolbar>
+  <ion-toolbar color="favorite">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title >Crear Usuarios</ion-title> -->
+  </ion-toolbar>
 </ion-header>
 
-<ion-content >
-     <br> 
-   <form  #form="ngForm" (ngSubmit)="registrar(form)">
-      <ion-grid>
-        <ion-row color="favorite" justify-content-center>
-          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-            <div text-center>
-              <h3>Crear Usuario</h3>
-            </div>
-            <div padding text-center>
+<ion-content>
+  <br>
+  <form #form="ngForm" (ngSubmit)="registrar(form)">
+    <ion-grid>
+      <ion-row color="favorite" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h5>Crear Usuario</h5>
+          </div>
+          <div padding text-center>
 
-              <ion-item>
-                   <span item-height>
+            <ion-item>
+              <!-- <span item-height>
                       <ion-icon name="person"></ion-icon>
-                    </span>
-                <ion-input name="nombre" type="text" placeholder="nombre" ngModel required
-                     [(ngModel)]="ArrayUsuario.nombre"></ion-input>
-              </ion-item>
-              <ion-label >Nombre</ion-label>
+                    </span> -->
+              <ion-input name="nombre" type="text" placeholder="nombre" ngModel required
+                [(ngModel)]="ArrayUsuario.nombre"></ion-input>
+            </ion-item>
+            <ion-label>Nombre</ion-label>
 
-              <ion-item>
-                   <span item-height>
+            <ion-item>
+              <!-- <span item-height>
                       <ion-icon name="person"></ion-icon>
-                    </span>
-                <ion-input name="apellidos" type="text" placeholder="Apellidos" ngModel required
-                    [(ngModel)]="ArrayUsuario.apellidos" ></ion-input>
-              </ion-item>
-              <ion-label>Apellidos</ion-label>
+                    </span> -->
+              <ion-input name="apellidos" type="text" placeholder="Apellidos" ngModel required
+                [(ngModel)]="ArrayUsuario.apellidos"></ion-input>
+            </ion-item>
+            <ion-label>Apellidos</ion-label>
 
-              <ion-item>
-                    <span  item-height>
+            <ion-item>
+              <!-- <span  item-height>
                       <ion-icon name="home"></ion-icon>
-                    </span>
-                <ion-input name="direccion" type="text" placeholder="Direccion" ngModel required
-                     [(ngModel)]="ArrayUsuario.direccion"></ion-input>
-              </ion-item>
-              <ion-label>Direccion</ion-label>
+                    </span> -->
+              <ion-input name="edad" type="text" placeholder="Edad" ngModel required [(ngModel)]="ArrayUsuario.edad">
+              </ion-input>
+            </ion-item>
+            <ion-label>Edad</ion-label>
 
-            </div>
-            <div  class="divbtnLonig">
-                <ion-button class="btnLogin" type="submit"  [disabled]="form.invalid" expand="block" >AGREGAR</ion-button>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </form>
-    
+            <ion-item>
+              <!-- <span  item-height>
+                  <ion-icon name="home"></ion-icon>
+                </span> -->
+              <ion-input name="correo" type="text" placeholder="Correo" ngModel required
+                [(ngModel)]="ArrayUsuario.correo"></ion-input>
+            </ion-item>
+            <ion-label>Correo</ion-label>
+
+            <ion-item>
+              <!-- <span  item-height>
+              <ion-icon name="home"></ion-icon>
+            </span> -->
+              <ion-input name="direccion" type="text" placeholder="Direccion" ngModel required
+                [(ngModel)]="ArrayUsuario.direccion"></ion-input>
+            </ion-item>
+            <ion-label>Direccion</ion-label>
+
+          </div>
+          <div class="divbtnLonig">
+            <ion-button class="btnLogin" type="submit" [disabled]="form.invalid" expand="block">AGREGAR</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
 </ion-content>

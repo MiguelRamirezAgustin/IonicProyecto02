@@ -1,18 +1,25 @@
 .LabelNombre{
-font-family: fantasy;
-font-size: 18px;
+font-family: 'Times New Roman';
+font-size: 20px;
 }
 
-.LabelApellidos{
-  font-family: fantasy;
-  font-size: 15px;
+.terxtoSecundario{
+  font-family: 'Times New Roman';
+  font-size: 17px;
 }
 
 .parrafo{
-  font-size: 13px;
-  font-family: fantasy;
+  font-size: 14px;
+  font-family: 'Times New Roman';
+}
+.correo{
+  font-size: 10px;
+  font-family: 'Times New Roman';
 }
 
+.Delete{
+  left: 100%;
+}
 
 .divGroup{
  padding: 3%;

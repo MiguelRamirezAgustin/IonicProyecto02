@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../../services/auth-service.service';
 import { HttpClient } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { async } from '@angular/core/testing';
+
 
 @Component({
   selector: 'app-crear-usuario',
@@ -9,16 +13,56 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CrearUsuarioPage implements OnInit {
 
-  constructor(public ApiService: AuthServiceService, private http: HttpClient, ) { }
+  constructor(public ApiService: AuthServiceService,
+    private http: HttpClient,
+    public router: Router,
+    public alerta: AlertController) { }
 
   ArrayUsuario = {
     "nombre": ' ',
     "apellidos": ' ',
+    "edad": ' ',
+    "correo": ' ',
     "direccion": ' '
+
   }
 
   ngOnInit() {
   }
+
+
+  //ALERTA
+  async presentAlert() {
+    return new Promise(async (resolve) => {
+      const confirm = await this.alerta.create({
+        header: ' ',
+        //subHeader: 'Esta seguro de eliminar el usuaros ?',
+        message: "Desea ver la lista de Usuarios ",
+        buttons: [
+          {
+            text: 'No',
+            handler: () => {
+              console.log('No')
+              return resolve(false);
+            },
+          },
+          {
+            text: 'OK',
+            handler: () => {
+            this.router.navigateByUrl('/menu/usuarios');  
+              console.log('ok ')
+
+            },
+          },
+        ],
+      });
+      await confirm.present();
+    });
+  }
+
+
+
+
 
   //Registrar Usuarios
   registrar() {
@@ -28,6 +72,7 @@ export class CrearUsuarioPage implements OnInit {
     } else {
       this.ApiService.PresenLoader();
       this.ApiService.servicioUsuariosPost(this.ArrayUsuario);
+      this.router.navigateByUrl('/menu/usuarios'); 
     }
   }
 

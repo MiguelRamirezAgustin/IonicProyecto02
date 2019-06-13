@@ -57,7 +57,7 @@ servicioUsuariosGet(){
 // //Metodo post
 servicioUsuariosPost(datosUsuarios){
   return new Promise( resolve => {
-   this.http.post('https://mbsi69vq93.execute-api.us-east-2.amazonaws.com/test', datosUsuarios ).subscribe(data => {
+   this.http.post('https://0kocuz1qef.execute-api.us-east-2.amazonaws.com/test', datosUsuarios ).subscribe(data => {
      resolve(data);
       console.log('^^^^^^^^OK_POST^^^^^^^^^^>\n');
       console.log(data);

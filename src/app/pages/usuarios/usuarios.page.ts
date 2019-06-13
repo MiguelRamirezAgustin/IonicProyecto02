@@ -49,13 +49,13 @@ export class UsuariosPage implements OnInit {
     console.log('Detalles'+ JSON.stringify(i));
    // alert(JSON.stringify(i));
    var datoNombre= i.nombre;
-   var id= {"id":i.id}
-   console.log('idUsuarios '+JSON.stringify(id));
+    this.ide= {"id":i.id}
+   console.log('idUsuarios '+JSON.stringify(this.ide));
 
    return new Promise(async (resolve) => {
     const confirm = await this.alertController.create({
-    header: 'Borrar el usuario',
-    //subHeader: 'Subtitle',
+    header: 'Borrar Usuarios\n',
+    subHeader: 'Esta seguro de eliminar el usuaros ?',
     message:datoNombre,
     buttons: [
       {
@@ -68,8 +68,11 @@ export class UsuariosPage implements OnInit {
       {
         text: 'OK',
         handler: () => {
-          console.log('ok ', id)
+          console.log('ok ', )
           //this.eliminar(id);
+          this.ApiService.servicioUsuariosDelete( JSON.stringify(this.ide));
+          this.ApiService.PresenLoader();
+          this.CargarUsuarios();
           return resolve(true);
         },
       },
@@ -79,7 +82,19 @@ export class UsuariosPage implements OnInit {
   });
  }
 
+ 
+//Eliminar con codigo duro y con boton 
+//  eliminar(){
+//   this.ide={
+//     "id":"cd90d670-88aa-11e9-9e85-bb145c5a56e3"
+//   }
 
+//   console.log('datosiDE -- ', this.ide);
+//    this.dato=JSON.stringify(this.ide.id);
+//    console.log('datos01 id.id -- ', this.dato);
+
+//    this.ApiService.servicioUsuariosDelete( JSON.stringify(this.ide));
+// }
 
 //  registrar() {
 //   console.log('Agregar--dos ----\n ', this.ArrayUsuario);
@@ -92,34 +107,6 @@ export class UsuariosPage implements OnInit {
 // }
 
 
-
- eliminar(){
-  this.ide={
-    "id":"cd90d670-88aa-11e9-9e85-bb145c5a56e3"
-  }
-
-  console.log('datosiDE -- ', this.ide);
-   this.dato=JSON.stringify(this.ide.id);
-   console.log('datos01 id.id -- ', this.dato);
-
-   this.ApiService.servicioUsuariosDelete( JSON.stringify(this.ide));
-}
- 
-
-
-
-// deleteUser(id) {
-//    id = this.name;
-//    console.log("press delete " + JSON.stringify(id));
-//    this.service.deleteUser(id).then(res => {
-//      console.log(res);
-//      this.ngOnInit();
-//    }, (error)=>{
-//      console.log(error);
-//    });
-//    //return id;
-//  }
- 
 
 
 
