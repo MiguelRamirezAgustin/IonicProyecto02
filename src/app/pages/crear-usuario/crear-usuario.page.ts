@@ -49,8 +49,8 @@ export class CrearUsuarioPage implements OnInit {
           {
             text: 'OK',
             handler: () => {
-            this.router.navigateByUrl('/menu/usuarios');  
-              console.log('ok ')
+            this.router.navigateByUrl('/menu/usuarios'); 
+              console.log('ok ');
 
             },
           },
